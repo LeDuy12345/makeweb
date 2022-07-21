@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html> 
+        <head> 
+              <title>Example</title>
+              <meta charset="utf-8"> <!--dùng để hỗ trợ tiếng việt-->
+              <style>
+                  html{
+                      font-size: 20px;
+                  }
+                  h1{
+                      font-size: 1rem;<!--rem phụ thuộc thẻ html, còn em phụ thuộc vào thẻ cha gần nhất chứa nó-->
+
+                  }
+                  h5{
+                      font-size: 2em;
+                  }
+                  h6{
+                      font-size: 100%;<!--100%=16px là mặc định-->
+                  }
+                  h2#id-h2.class-h2{
+                      color: deeppink;
+                  }
+                  #id-h2.class-h2{
+                      color: darkgreen;
+                  }
+                  #id-h2{
+                      color: blueviolet!important;
+                  }
+                  <!--cái nào mới hơn thì hiển thị cái đó-->
+                  h2{
+                      color:fuchsia;
+                      font-size: 40px;
+                  }
+                  .box{
+                      width: 50%;
+                      height: 100px;
+                      background-color:red;
+                  }
+                  <!--box bằng 50% của thẻ body, tương đối vì sẽ thay đổi theo kích thước của body, 
+                    phụ thuộcvào thẻ chứa nó, còn thẻ body sẽ có width mặc định-->
+                  a::after{
+                      content:" ("attr(href)")";
+                  }
+                  h5:hover{
+                      color:blanchedalmond;
+                      font-size: 100px;
+                  }
+                  h6:after{ 
+                      content: attr(data-title);
+                  }
+                  h6:active{
+                      color: darkmagenta;
+                  }
+                  li:first-child{
+                      color: rgb(20, 190, 74);
+                      font-size: 50px; 
+                  }
+                  li:last-child{
+                      color:rgb(235, 15, 15);
+                      font-size: 200px;
+                  }
+                  .box::before{
+                      content: "";
+                      display: block;
+                      width:50px;
+                      height: 50px;
+                      background-color: black;
+                  }
+                  .box::after{
+                      content: "";
+                      display: block;
+                      width:50px;
+                      height: 50px;
+                      background-color: black;
+                  }
+                  h1::first-letter{
+                      font-size: 70px;
+                      color: blue;
+                  }
+                  h1::first-line{
+                      font-size: 100px;
+                  }
+                  h1::selection{
+                      background-color: brown;
+                  }
+                  ::selection{<!--tất cả elements trong trình duyệt đều bị ảnh hưởng-->
+                      background-color: gold;
+                  }
+                  .box5{
+                      content: "";
+                      width: 500px;
+                      height: 200px;
+                      background-color: burlywood;
+                  }
+                  .box6{
+                      content: "";
+                      width:700px;
+                      height: 100px;
+                      background-color: blue;
+                      margin: 40px 50px 60px 70px;
+
+                  }
+                  .box7{
+                      content: "";
+                      width: 500px;
+                      height: 200px;
+                      background-color:rgb(26, 209, 93);
+                      padding: 50px 60px 70px 80px;
+                      border-right: 20px solid violet;
+                      margin-top: 20px;
+                      box-sizing: border-box;
+                      <!--border: solid violet;-->
+                      <!--border: 10px solid;-->
+                      <!--border-width: 10px;-->
+                      <!--border-style: solid;-->
+                      <!--border-color: rgb(225, 94, 148);-->
+                      <!--border-top-width: 10px;-->
+                      <!--border-right-width: 0;-->
+                      <!--border-bottom-width: 0;-->
+                      <!--border-left-width: 0;-->
+                  }
+                  .box7{
+                      box-sizing: unset;
+                  }
+                  .box8{
+                      width: 500px;
+                      height: 500px;
+                      background-image: 
+                      url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Featured_article_star.svg/2048px-Featured_article_star.svg.png),
+                      url(https://topshare.vn/wp-content/uploads/2021/10/hinh-anh-anime-ngau-loi-1.jpg);        
+                      background-size: 100% 100%;
+                      background-repeat: no-repeat;
+                      /* background-repeat: repeat-x;
+                      background-repeat: repeat-y;
+                      */
+                    }
+                    .box9{
+                        width: 100%;
+                        height: 100hv;
+                        background-image: linear-gradient(0,#333,#ccc);
+                    }
+              </style>  
+              <link rel="stylesheet" href="example.css">
+        </head> 
+        <body> 
+            <div class="box">
+                <div></div> <!--div*10-->
+                <div></div>
+                <div></div> 
+                <div></div> 
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div> <!--mặc định trình duyệt đặt là 1 block-->
+            <div style="font-size: 50px;">
+                <h1> Xin chào!<br/> dòng thứ 2</h1><!--<br/> kí tự xuống dòng-->
+                <p>Rộ tin đồn ông Putin bị ung thư</p>
+                <img title="Đây là ảnh" src="https://photo-cms-sggp.zadn.vn/w570/Uploaded/2022/dufkxmeyxq/2022_04_03/tongthongngaputinkhangdinhloiichdatnuoclakhongthethuongluong_hmvk.jpg">
+                <h2 id="id-h2" class="class-h2">Học fullstack</h2><!--attribute title-->
+                <a href="https://fullstack.edu.vn/learning/html-css?id=28595e0f-ee7e-46a8-bdb5-fdf842674496">Trang đang học</a><!--anchor-Mỏ neo-->
+                <a href="https://fullstack.edu.vn">fullstack</a><!--attribute href-->
+                <ul> <!--ul-tạo ra 1 danh sách(unordered list),li các phần tử bên trong(list item)-->
+                    <li>Họ tên</li>
+                    <li>Ngày sinh</li>
+                    <li>Quê quán</li>
+                </ul>
+                <ol>
+                    <li id="a1">Họ tên</li><!--attribute id(identification)-->
+                    <li id="a2">Ngày sinh</li>
+                    <li class="a3">Quê quán</li>
+                </ol>
+                <h3 style="color: chartreuse; font-size:40px">attribute</h3><!-- attribute là thuộc tính của html nằm trong thẻ mở-->
+                
+            </div>
+            <table><!--tạo 1 bảng-->
+                <thead><!--đầu bảng-->
+                    <th class="a3">STT</th>
+                    <th class="a3">Địa chỉ</th>
+                    <th class="a3">Tên</th>
+                </thead>
+                <tbody>
+                    <tr><!--tr(table round)-->
+                        <ti>1</ti>
+                        <td>Hà Nội</td>
+                        <td class="a3">Duy</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Hà Nội</td>
+                        <td class="a3">Duy 2</td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="text">
+            <input type="checkbox">
+            <input type="radio">
+            <button>Đăng ký</button>
+            <h4>Đây là trang web của tôi</h4>
+            <h5 class="box1 box2">Lê Duy</h5> 
+            <a href="https://fullstack.edu.vn">Duy</a>
+            <h6 class="box1 box3" data-title="Xin chào nhé">20203397</h6>
+            <h7 class="box1 box4">14-8-2002</h7>
+            <div class="box5"></div>
+            <div class="box6"></div>
+            <div class="box7"></div>
+            <div class="box8"></div>
+            <div class="box9"></div>
+        </body>
+</html>
